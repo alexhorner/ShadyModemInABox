@@ -16,10 +16,8 @@ WORKDIR /root/shadysoftmodem
 RUN git clone https://github.com/Shadytel/pkg-sl-modem.git
 RUN make
 
-WORKDIR /yate.conf.d
-COPY yate.conf .
-COPY accfile.conf .
-COPY regexroute.conf .
+WORKDIR /
+COPY yate.conf.d .
 
 RUN ldconfig
 
