@@ -26,8 +26,9 @@ RUN apt-get update && apt-get upgrade -y && apt-get install nano ppp -y && rm -r
 
 COPY --from=build /opt/yate/ /
 COPY --from=build /root/shadysoftmodem/inbound_modem /usr/bin/inbound_modem
-COPY --from=build /root/shadysoftmodem/inbound_modem_attach /usr/bin/inbound_modem_attach
 COPY --from=build /usr/sbin/tini /usr/sbin/tini
+
+RUN ln -s /usr/bin/inbound_modem /usr/bin/inbound_modem_attach
 
 RUN ldconfig
 
