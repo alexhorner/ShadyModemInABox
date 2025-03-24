@@ -16,9 +16,9 @@ WORKDIR /root/shadysoftmodem
 RUN git clone https://github.com/Shadytel/pkg-sl-modem.git
 RUN make
 
+RUN ldconfig
+
 WORKDIR /
 COPY yate.conf.d .
-
-RUN ldconfig
 
 ENTRYPOINT ["yate", "-c", "."]
