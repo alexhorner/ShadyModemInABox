@@ -28,7 +28,6 @@ COPY --from=build /opt/yate/ /
 COPY --from=build /root/shadysoftmodem/inbound_modem /usr/bin/inbound_modem
 COPY --from=build /usr/sbin/tini /usr/sbin/tini
 COPY answer_echo.sh /answer_echo.sh
-#RUN chmod +x /answer_echo.sh
 
 RUN ln -s /usr/bin/inbound_modem /usr/bin/inbound_modem_attach
 
